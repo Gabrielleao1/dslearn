@@ -15,8 +15,8 @@ public class DeliverService {
 	@Autowired
 	private DeliverRepository repository;
 	
+	
 	@Transactional
-	@PreAuthorize("hasAnyRole('ADMIN','INSTRUCTOR')")
 	public void saveRevision(Long id, DeliverRevisionDTO dto) {
 		Deliver deliver = repository.getOne(id);
 		deliver.setStatus(dto.getStatus());
